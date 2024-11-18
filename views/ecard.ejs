@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eカード</title>
+</head>
+<body>
+    <h1>Eカード</h1>
+
+    <p>プレイヤーのカード: <%= playerChoice ? playerChoice : 'カード未選択' %></p>  
+    <p>コンピュータのカード: <%= cpuChoice ? cpuChoice : 'カード未選択' %></p>  
+    <p>結果: <%= result ? result : '結果なし' %></p>
+
+    <h2>勝たなきゃ53！</h2>
+    <form action="/ecard" method="get">
+      
+        <% playerCards.forEach(function(card) { %>
+            <button type="submit" name="card" value="<%= card %>"><%= card %></button>
+        <% }) %>
+    </form>
+
+    <h3>多重債務者(相手)のカード:</h3>
+    <ul>
+        <% cpuCards.forEach(function(card) { %>
+            <li><%= card %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

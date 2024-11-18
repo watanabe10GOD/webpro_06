@@ -67,4 +67,85 @@ app.get("/janken", (req, res) => {
   res.render('janken', display);
 });
 
+
+
+const playerCards = ["皇帝", "市民", "市民", "市民", "市民"];
+const cpuCards = ["奴隷", "市民", "市民", "市民", "市民"];
+
+
+const rules = {
+  "皇帝": "市民",
+  "市民": "奴隷",
+  "奴隷": "皇帝"
+};
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+app.get("/ecard", (req, res) => {
+
+  const playerChoice = req.query.card || playerCards[0];  
+  const cpuChoice = cpuCards[Math.floor(Math.random() * cpuCards.length)]; 
+
+  let result = '';
+  if (playerChoice && cpuChoice) {
+    if (playerChoice === cpuChoice) {
+      result = "引き分け";
+    } else if (rules[playerChoice] === cpuChoice) {
+      result = "勝ち";
+    } else {
+      result = "負け";
+    }
+  }
+
+  res.render('ecard', {
+    playerChoice: playerChoice,
+    cpuChoice: cpuChoice,
+    result: result,
+    playerCards: playerCards,
+    cpuCards: cpuCards
+  });
+});
+
+
+app.get("/quiz", (req, res) => {
+ 
+  const quiz = {
+    question: "HTMLの正しいタグはどれですか？",
+    options: [
+      { id: 1, answer: "<head>" },
+      { id: 2, answer: "<title>" },
+      { id: 3, answer: "<div>" },
+      { id: 4, answer: "<main>" }
+    ],
+    correctAnswer: 3 
+  };
+
+  res.render('quiz', { quiz });
+});
+
+
+app.get("/quiz/result", (req, res) => {
+  const userAnswer = parseInt(req.query.answer);  
+  const quiz = {
+    question: "HTMLの正しいタグはどれですか？",
+    options: [
+      { id: 1, answer: "<head>" },
+      { id: 2, answer: "<title>" },
+      { id: 3, answer: "<div>" },
+      { id: 4, answer: "<main>" }
+    ],
+    correctAnswer: 3 
+  };
+
+  let resultMessage = '';
+  if (userAnswer === quiz.correctAnswer) {
+    resultMessage = '正解です！';
+  } else {
+    resultMessage = '不正解です。もう一度挑戦してみてください。';
+  }
+
+  res.render('quizResult', { resultMessage, correctAnswer: quiz.options[quiz.correctAnswer - 1].answer });
+});
+
 app.listen(8080, () => console.log("Example app listening on port 8080!"));

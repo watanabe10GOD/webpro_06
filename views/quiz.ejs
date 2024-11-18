@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クイズ</title>
+</head>
+<body>
+  <h1><%= quiz.question %></h1>
+  <form action="/quiz/result" method="get">
+    <% quiz.options.forEach(option => { %>
+      <div>
+        <input type="radio" id="answer<%= option.id %>" name="answer" value="<%= option.id %>" required>
+        <label for="answer<%= option.id %>"><%= option.answer %></label>
+      </div>
+    <% }); %>
+    <button type="submit">答える</button>
+  </form>
+</body>
+</html>
