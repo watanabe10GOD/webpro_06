@@ -1,9 +1,12 @@
 # webpro_06
 
 ## app5.jsについて
-##　　起動方法
-・必要な環境　Node.js
-  1.リポジトリのクローン
+
+### 起動方法
+・必要な環境　Node.js  
+1. リポジトリのクローン  
+ 
+
 ```
 git clone https://github.com/username/app5.git
 cd app5
@@ -60,8 +63,8 @@ flowchart TD;
     style K fill:#fff,stroke:#000,stroke-width:1px
 
 ```
-##　git管理
-1.コミット対象として選択
+#　git管理
+1.　コミット対象として選択
 ```
 git add .
 ```
