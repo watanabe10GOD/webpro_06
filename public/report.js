@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         alert(data.message);
         
         const newTask = document.createElement("li");
-        newTask.textContent = `${title}: ${description}`;
+        newTask.textContent = `${title}: ${description}`; 
         taskList.appendChild(newTask);
       } else {
         alert("エラーが発生しました");

@@ -12,7 +12,7 @@ let taskId = 1;
 
 app.post('/tasks', (req, res) => {
   const { action, title, description } = req.body;  
-
+  console.log('Received request:', req.body);  
   if (action === "create") {
     const newTask = { id: taskId++, title, description };  
     tasks.push(newTask);
