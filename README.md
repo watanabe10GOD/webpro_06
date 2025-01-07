@@ -24,6 +24,15 @@ node app5.js
 ```
  Example app listening on port 8080!
 ```
+
+## ファイル一覧
+| ディレクトリ | ファイル名                                                                 |
+|-----------|-----------------------------------------------------------------------|
+| **app5.js** | app5.js                                                               |
+| **public**   | Apple_logo_black.svg, test.html                                        |
+| **views**    | icon.ejs, luck.ejs, janken.html, show.ejs, janken.ejs, ecard.ejs, quiz.ejs, quizResult.ejs |
+| **Root**      | .gitignore, README.md, app.js, app2.js, app3.js, app4.js, package-lock.json, package.json |
+
 ## 機能一覧
 
 ##### 1.Hello World ページ (/hello1, /hello2,/show)
