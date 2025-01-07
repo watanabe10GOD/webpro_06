@@ -26,8 +26,8 @@ node app5.js
 ```
 ## 機能一覧
 
-##### 1.Hello World ページ (/hello1, /hello2)
-この機能は、「Hello world」や「Bon jour」といった簡単なメッセージを表示する。ブラウザで （http://localhost:8080/hello1） または （http://localhost:8080/hello2） にアクセスすると、どちらのURLでも同じメッセージが表示される。
+##### 1.Hello World ページ (/hello1, /hello2,/show)
+この機能は、「Hello world」や「Bon jour」といった簡単なメッセージをshow.ejs テンプレートを使用して、表示する。ブラウザで （http://localhost:8080/hello1） または （http://localhost:8080/hello2） にアクセスすると、どちらのURLでも同じメッセージが表示される。
 
 ##### 2.アイコン表示 (/icon)
 このページでは、Appleのロゴ画像を表示する。ブラウザで （http://localhost:8080/icon） にアクセスすることで、Appleのロゴが表示される。
